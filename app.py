@@ -19,6 +19,7 @@ app.secret_key = "some-secret-key"
 def index():
     if "status" not in session:  
         session["status"] = False
+        session["username"] = None
 
     expenses = list(collection.find({ "username":session["username"]  }) ) 
     total_expense = sum(int(exp.get("amount", 0)) for exp in expenses) 
