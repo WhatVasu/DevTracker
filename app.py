@@ -17,7 +17,7 @@ app.secret_key = "some-secret-key"
 
 @app.route('/')
 def index():
-    if "status" not in session:  
+    if "status" and "username" not in session:  
         session["status"] = False
         session["username"] = None
 
