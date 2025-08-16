@@ -6,10 +6,7 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-
-MONGODB_URI ="mongodb+srv://@cluster0.ecjeb88.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0//tempp"
-
-
+MONGODB_URI = os.getenv("MONGODB_URI")
 
 client = MongoClient(MONGODB_URI)
 db = client['expense_tracker']
