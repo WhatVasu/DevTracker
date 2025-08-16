@@ -4,8 +4,12 @@ from flask import *
 import os
 from dotenv import load_dotenv
 
+
 load_dotenv()
-MONGODB_URI = os.getenv("MONGODB_URI")
+
+MONGODB_URI ="mongodb+srv://@cluster0.ecjeb88.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0//tempp"
+
+
 
 client = MongoClient(MONGODB_URI)
 db = client['expense_tracker']
@@ -13,7 +17,7 @@ db = client['expense_tracker']
 collection =db["expenses"]
 cred=db["credentials"]
 app= Flask(__name__)
-app.secret_key = "some-secret-key"
+app.secret_key = "909"
 
 @app.route('/')
 def index():
